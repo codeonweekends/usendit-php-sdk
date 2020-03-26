@@ -1,0 +1,23 @@
+{
+    "name": "codeonweekends/usendit-php-sdk",
+    "description": "PHP SDK for uSendIt SMS Gateway.",
+    "type": "library",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Amandio K. Nhamande",
+            "email": "amandio16@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodeonWeekends\\USendIt\\": "src/"
+        }
+    }
+}
