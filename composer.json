@@ -3,6 +3,7 @@
     "description": "PHP SDK for uSendIt SMS Gateway.",
     "type": "library",
     "version": "1.0.0",
+    "license": "MIT",
     "authors": [
         {
             "name": "Amandio K. Nhamande",
