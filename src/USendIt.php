@@ -2,6 +2,10 @@
 
 namespace CodeonWeekends\USendIt;
 
+use CodeonWeekends\USendIt\Interfaces\AccountInterface;
+use CodeonWeekends\USendIt\Interfaces\CharacterCountResultInterface;
+use CodeonWeekends\USendIt\Interfaces\InvoiceInterface;
+use CodeonWeekends\USendIt\Interfaces\ScheduleResultInterface;
 use CodeonWeekends\USendIt\Interfaces\USendItInterface;
 use GuzzleHttp\Client as HttpClient;
 
@@ -175,5 +179,93 @@ class USendIt implements USendItInterface
         } else if (!$sms->getMessageText()) {
             throw new \Exception('Invalid Text Message.', 15);
         }
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function sendMessages(array $sms, $async = false): ScheduleResultInterface
+    {
+        // TODO: Implement sendMessages() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function smsCharCounter(string $message): CharacterCountResultInterface
+    {
+        // TODO: Implement smsCharCounter() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getPartnersEvents(string $partnerEventId): object
+    {
+        // TODO: Implement getPartnersEvents() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getSchedule(int $eventId): ScheduleResultInterface
+    {
+        // TODO: Implement getSchedule() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function authenticateUser(string $username, string $password): object
+    {
+        // TODO: Implement authenticateUser() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getCreditPacks(): object
+    {
+        // TODO: Implement getCreditPacks() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function buyCredits(int $packId, string $caller): object
+    {
+        // TODO: Implement buyCredits() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function createAccount(AccountInterface $account, InvoiceInterface $invoiceInfo): object
+    {
+        // TODO: Implement createAccount() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function confirmAccount(string $confirmationCode): object
+    {
+        // TODO: Implement confirmAccount() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function resendConfirmationCode(): object
+    {
+        // TODO: Implement resendConfirmationCode() method.
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getCountries(): object
+    {
+        // TODO: Implement getCountries() method.
     }
 }
