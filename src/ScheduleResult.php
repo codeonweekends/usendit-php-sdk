@@ -43,8 +43,6 @@ class ScheduleResult implements ScheduleResultInterface
         foreach ($result as $k => $v) {
             $this->{'set' . $k}($v);
         }
-
-        print_r($result);
     }
 
     /**
