@@ -2,8 +2,6 @@
 
 namespace CodeonWeekends\USendIt\Interfaces;
 
-use CodeonWeekends\USendIt\SMS;
-
 /**
  * Interface USendItInterface
  * @package CodeonWeekends\USendIt\Interfaces
@@ -15,11 +13,11 @@ use CodeonWeekends\USendIt\SMS;
 interface USendItInterface
 {
     /**
-     * @param SMS $sms
+     * @param SMSInterface $sms
      * @param bool $async
      * @return ScheduleResultInterface
      */
-    public function sendMessage(SMS $sms = null, $async = false) : ScheduleResultInterface;
+    public function sendMessage(SMSInterface $sms = null, $async = false) : ScheduleResultInterface;
 
     /**
      * This method allows to send SMS to multiple contacts at once.

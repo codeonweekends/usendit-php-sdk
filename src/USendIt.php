@@ -6,6 +6,7 @@ use CodeonWeekends\USendIt\Interfaces\AccountInterface;
 use CodeonWeekends\USendIt\Interfaces\CharacterCountResultInterface;
 use CodeonWeekends\USendIt\Interfaces\InvoiceInterface;
 use CodeonWeekends\USendIt\Interfaces\ScheduleResultInterface;
+use CodeonWeekends\USendIt\Interfaces\SMSInterface;
 use CodeonWeekends\USendIt\Interfaces\USendItInterface;
 use GuzzleHttp\Client as HttpClient;
 
@@ -47,12 +48,12 @@ class USendIt implements USendItInterface
     }
 
     /**
-     * @param SMS $sms
+     * @param SMSInterface $sms
      * @param bool $async
-     * @return ScheduleResult
+     * @return ScheduleResultInterface
      * @throws \Exception
      */
-    public function sendMessage(SMS $sms = null, $async = false) : ScheduleResult
+    public function sendMessage(SMSInterface $sms = null, $async = false) : ScheduleResultInterface
     {
         $this->validateCredentials();
         $this->validateSMS($sms);
@@ -165,10 +166,10 @@ class USendIt implements USendItInterface
     }
 
     /**
-     * @param SMS $sms
+     * @param SMSInterface $sms
      * @throws \Exception
      */
-    private function validateSMS(SMS $sms = null)
+    private function validateSMS(SMSInterface $sms = null)
     {
         if (!$sms) {
             throw new \Exception('Invalid SMS Object.', 11);
