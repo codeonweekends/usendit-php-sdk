@@ -2,7 +2,7 @@
 
 namespace CodeonWeekends\USendIt\Tests;
 
-use CodeonWeekends\USendIt\ScheduleResult;
+use CodeonWeekends\USendIt\Interfaces\ScheduleResultInterface;
 use CodeonWeekends\USendIt\SMS;
 use CodeonWeekends\USendIt\USendIt;
 use Exception;
@@ -62,6 +62,17 @@ class SendMessageTest extends TestCase
 
         $response = $uSendIt->sendMessage($sms);
 
-        $this->assertInstanceOf(ScheduleResult::class, $response);
+        $this->assertInstanceOf(ScheduleResultInterface::class, $response);
+
+        return $response;
+    }
+
+    /**
+     * @depends testSendMessage
+     * @param ScheduleResultInterface $response
+     */
+    public function testSendMessageFailed(ScheduleResultInterface $response)
+    {
+        $this->assertEquals(2, $response->getScheduleStatus());
     }
 }
